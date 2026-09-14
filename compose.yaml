@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:18
+    restart: always
+    shm_size: 128mb
+
+    environment:
+      POSTGRES_USER: Dayvd
+      POSTGRES_PASSWORD: D@yvd
+      POSTGRES_DB: postgres_index_lab_database
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
